@@ -264,3 +264,8 @@
 
 /* KaTeX's hidden MathML layer is position:absolute; keep it inside its formula so it never widens a phone layout */
 .katex, .nt-eq, .eqx { position: relative; }
+
+.bx-model { border-color: rgba(47,183,166,.55); }
+.bx-model > .bx-hd { background: rgba(47,183,166,.22); color: #c9f3ec; border-bottom-color: rgba(47,183,166,.45); }
+
+@media (max-width: 560px) { .nt-eq .katex { font-size: .98em; } }

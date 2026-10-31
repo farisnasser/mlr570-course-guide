@@ -192,3 +192,70 @@ export function tween(ms, f, done) {
   id = requestAnimationFrame(step);
   return () => { stop = true; cancelAnimationFrame(id); };
 }
+
+/** Chart — a Plane with independent x / y ranges and labelled axes (for curves, bars, histograms).
+ *  o: { x:[x0,x1], y:[y0,y1], pad:[top,right,bottom,left], xticks, yticks (arrays of numbers or [v,label]), xlabel, ylabel } */
+export class Chart extends Plane {
+  constructor(host, o = {}) {
+    super(host, Object.assign({ bgGrid: false, x: [0, 1], y: [0, 1], pad: [14, 14, 30, 40], xlabel: '', ylabel: '', grid: true }, o));
+  }
+  get sx() { const [, r, , l] = this.o.pad; return (this.w - l - r) / (this.o.x[1] - this.o.x[0]); }
+  get sy() { const [t, , b] = this.o.pad; return (this.h - t - b) / (this.o.y[1] - this.o.y[0]); }
+  get s() { return Math.min(this.sx, this.sy); }
+  X(x) { return this.o.pad[3] + (x - this.o.x[0]) * this.sx; }
+  Y(y) { return this.h - this.o.pad[2] - (y - this.o.y[0]) * this.sy; }
+  inv(px, py) { return [this.o.x[0] + (px - this.o.pad[3]) / this.sx, this.o.y[0] + (this.h - this.o.pad[2] - py) / this.sy]; }
+  box() { return { x0: this.o.x[0], x1: this.o.x[1], y0: this.o.y[0], y1: this.o.y[1] }; }
+  paint() {
+    if (!this.w) return;
+    const g = this.ctx; g.clearRect(0, 0, this.w, this.h);
+    this.axes();
+    this.render?.(g, this);
+    for (const h of this.handles) if (h.visible?.() !== false && h.ring !== false) this.handleRing(h);
+  }
+  _move(px, py) {
+    let p = this.inv(px, py); const [x0, x1] = this.o.x, [y0, y1] = this.o.y;
+    p = [Math.max(x0, Math.min(x1, p[0])), Math.max(y0, Math.min(y1, p[1]))];
+    const sn = this.drag.snap; if (sn) p = p.map(v => Math.round(v / sn) * sn);
+    this.drag.set(p); this.onDrag?.(this.drag); this.draw();
+  }
+  static ticks(lo, hi, n = 5) {
+    const span = hi - lo || 1, step0 = span / n, mag = 10 ** Math.floor(Math.log10(step0));
+    const step = [1, 2, 2.5, 5, 10].map(s => s * mag).find(s => span / s <= n + .5) || mag * 10;
+    const out = []; for (let v = Math.ceil(lo / step - 1e-9) * step; v <= hi + step * 1e-9; v += step) out.push(+v.toPrecision(12));
+    return out;
+  }
+  axes() {
+    const g = this.ctx, o = this.o, [x0, x1] = o.x, [y0, y1] = o.y;
+    const xt = (o.xticks ?? Chart.ticks(x0, x1, Math.max(2, Math.floor((this.w - 60) / 70)))).map(t => Array.isArray(t) ? t : [t, String(+t.toPrecision(6))]);
+    const yt = (o.yticks ?? Chart.ticks(y0, y1, Math.max(2, Math.floor((this.h - 50) / 45)))).map(t => Array.isArray(t) ? t : [t, String(+t.toPrecision(6))]);
+    g.save(); g.lineWidth = 1; g.font = '500 10.5px "JetBrains Mono", monospace'; g.fillStyle = COL.muted;
+    if (o.grid) {
+      g.strokeStyle = 'rgba(124,196,255,.07)'; g.beginPath();
+      for (const [v] of yt) { g.moveTo(this.X(x0), this.Y(v)); g.lineTo(this.X(x1), this.Y(v)); }
+      for (const [v] of xt) { g.moveTo(this.X(v), this.Y(y0)); g.lineTo(this.X(v), this.Y(y1)); }
+      g.stroke();
+    }
+    g.strokeStyle = 'rgba(232,236,248,.38)'; g.beginPath();
+    const ay = y0 <= 0 && y1 >= 0 ? 0 : y0, ax = x0 <= 0 && x1 >= 0 ? 0 : x0;
+    g.moveTo(this.X(x0), this.Y(ay)); g.lineTo(this.X(x1), this.Y(ay)); g.moveTo(this.X(ax), this.Y(y0)); g.lineTo(this.X(ax), this.Y(y1)); g.stroke();
+    g.textAlign = 'center'; g.textBaseline = 'top';
+    for (const [v, l] of xt) if (l) g.fillText(l, this.X(v), this.Y(y0) + 5);
+    g.textAlign = 'right'; g.textBaseline = 'middle';
+    for (const [v, l] of yt) if (l) g.fillText(l, this.X(x0) - 6, this.Y(v));
+    g.font = 'italic 600 13px "Source Serif 4", Georgia, serif'; g.fillStyle = COL.ink;
+    if (o.xlabel) { g.textAlign = 'right'; g.textBaseline = 'bottom'; g.fillText(o.xlabel, this.X(x1), this.Y(ay) - 4); }
+    if (o.ylabel) { g.textAlign = 'left'; g.textBaseline = 'top'; g.fillText(o.ylabel, this.X(ax) + 6, this.Y(y1)); }
+    g.restore();
+  }
+  /** filled region between curve pts and y = base */
+  area(pts, fill, base = 0) {
+    if (!pts.length) return; const g = this.ctx; g.save(); g.beginPath(); g.moveTo(this.X(pts[0][0]), this.Y(base));
+    for (const p of pts) g.lineTo(this.X(p[0]), this.Y(p[1])); g.lineTo(this.X(pts[pts.length - 1][0]), this.Y(base)); g.closePath(); g.fillStyle = fill; g.fill(); g.restore();
+  }
+  rect(x0, y0, x1, y1, fill, stroke) {
+    const g = this.ctx, a = this.X(Math.min(x0, x1)), b = this.Y(Math.max(y0, y1)), w = Math.abs(this.X(x1) - this.X(x0)), h = Math.abs(this.Y(y1) - this.Y(y0));
+    g.save(); if (fill) { g.fillStyle = fill; g.fillRect(a, b, w, h); } if (stroke) { g.strokeStyle = stroke; g.lineWidth = 1.5; g.strokeRect(a, b, w, h); } g.restore();
+  }
+  fn(f, color, o = {}) { const [x0, x1] = o.dom ?? this.o.x, n = o.n ?? 240; this.path(Array.from({ length: n + 1 }, (_, i) => { const x = x0 + (x1 - x0) * i / n; return [x, f(x)]; }), color, o); }
+}

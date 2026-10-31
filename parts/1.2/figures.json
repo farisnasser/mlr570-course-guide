@@ -1,0 +1,14 @@
+[
+ {"id": "rv-tree", "page": 23, "rect": [108, 198, 492, 340], "label": "Map of the part: a random variable is single (discrete: PMF, CDF; continuous: PDF, CDF; moments: mean, variance, std) or two random variables (joint: marginal, conditional, independence, expectation, covariance, correlation, conditional expectation)"},
+ {"id": "pmf-table", "page": 24, "rect": [122, 84, 202, 206], "label": "Table of x and pX(x): 0 -> 1/4, 1 -> 1/2, 2 -> 1/4, sum 1"},
+ {"id": "pmf-cdf-plots", "page": 24, "rect": [148, 216, 448, 322], "label": "PMF bars at 0, 1, 2 and the CDF staircase 1/4, 3/4, 1"},
+ {"id": "pdf-cdf-curves", "page": 24, "rect": [70, 514, 518, 630], "label": "PDF: probability is the area under fX between a and b; CDF FX(x) rises to 1"},
+ {"id": "ab-dots", "page": 25, "rect": [155, 488, 441, 552], "label": "A = {9, 10, 11} and B = {0, 10, 20} on a number line, both with mean 10"},
+ {"id": "normal-rule", "page": 27, "rect": [188, 380, 408, 477], "label": "Normal curve with 68%, 95%, 99.7% bands at mu plus or minus sigma, 2 sigma, 3 sigma"},
+ {"id": "joint-grid", "page": 28, "rect": [214, 233, 378, 313], "label": "Joint PMF table with cells p(x, y) for X, Y in 1, 2, 3"},
+ {"id": "students-table", "page": 28, "rect": [178, 342, 418, 426], "label": "80 students: passed/did not pass by studied/did not study: 36, 14, 50; 9, 21, 30; totals 45, 35, 80"},
+ {"id": "marginal-arrow", "page": 29, "rect": [152, 58, 444, 96], "label": "2D joint distribution, sum over Y, collapses to the 1D distribution of X"},
+ {"id": "indep-table", "page": 31, "rect": [106, 398, 264, 486], "label": "Table: X=0 row 0.15, 0.15, 0.3; X=1 row 0.35, 0.35, 0.7; P(Y) 0.5, 0.5, 1"},
+ {"id": "exy-table", "page": 32, "rect": [96, 422, 221, 488], "label": "Table: X=1 row 0.2, 0.3; X=2 row 0.1, 0.4"},
+ {"id": "rho-panels", "page": 34, "rect": [112, 360, 490, 466], "label": "Four scatter plots: rho = 1 linear correlation, rho > 0 increase together, rho = 0 no linear relation, rho < 0 one up other down"}
+]

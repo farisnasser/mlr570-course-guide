@@ -11,6 +11,7 @@
 //   :::ml Title             blue box  (why it matters in ML)
 //   :::add Title            amber box (additions / clarifications not in the original notes)
 //   :::ex Title             grey example box with a header bar
+//   :::model Title          teal-headed box (the PDF's "Mental model" summaries)
 //   :::plain                bordered box (e.g. "The flow")
 //   :::big Title            red box, centred large text ("Big picture")
 //   :::cols [even|figleft]  side-by-side columns; :::col ... ::: inside (stack on phones)
@@ -39,6 +40,7 @@ export function inline(s) {
     .replace(/§(\d+\.\d+(?:\.\d+)?)((?:[–-]\d+\.\d+(?:\.\d+)?)?)/g, (m, a) => {
       const h = XREF(a); return h ? `<a class="xref" href="${h}">${m}</a>` : m;
     });
+  s = s.replace(/&lt;br&gt;/g, '<br>');
   return s.replace(/\u0000(\d+)\u0000/g, (_, i) => tex(math[+i], false));
 }
 
@@ -75,11 +77,11 @@ function list(lines, ordered) {
   return `<${tag}>${items.map(it => `<li>${blocks(it)}</li>`).join('')}</${tag}>`;
 }
 
-const BOX = { def: 'bx-def', ml: 'bx-ml', add: 'bx-add', ex: 'bx-ex', plain: 'bx-plain', big: 'bx-def bx-big' };
+const BOX = { def: 'bx-def', ml: 'bx-ml', add: 'bx-add', ex: 'bx-ex', model: 'bx-ex bx-model', plain: 'bx-plain', big: 'bx-def bx-big' };
 
 function box(kind, title, body, ctx) {
   let inner = blocks(body, ctx);
-  if (kind === 'ex') return `<div class="bx bx-ex">${title ? `<div class="bx-hd">${inline(title)}</div>` : ''}<div class="bx-b">${inner}</div></div>`;
+  if (kind === 'ex' || kind === 'model') return `<div class="bx ${BOX[kind]}">${title ? `<div class="bx-hd">${inline(title)}</div>` : ''}<div class="bx-b">${inner}</div></div>`;
   let t = '';
   if (title) {
     // red and "big" boxes run their title into the first paragraph, like the PDF; blue / amber put it on its own line
