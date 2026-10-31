@@ -269,3 +269,7 @@
 .bx-model > .bx-hd { background: rgba(47,183,166,.22); color: #c9f3ec; border-bottom-color: rgba(47,183,166,.45); }
 
 @media (max-width: 560px) { .nt-eq .katex { font-size: .98em; } }
+
+/* header-less tables (aligned lists in the PDF): no rules, centred */
+.nt-table.bare table { width: auto; margin: 0 auto; border: 0; }
+.nt-table.bare td { border: 0; padding: 2px 12px; }

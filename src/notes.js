@@ -63,7 +63,7 @@ function table(rows) {
   const bare = head.every(c => !c);
   const label = j => esc((head[j] || '').replace(/\$|\*\*/g, ''));
   const td = (tag, c, j) => `<${tag}${aligns[j] !== 'left' ? ` style="text-align:${aligns[j]}"` : ''}${tag === 'td' && !bare ? ` data-label="${label(j)}"` : ''}>${inline(c)}</${tag}>`;
-  return `<div class="nt-table ${cls}"><table>${bare ? '' : `<thead><tr>${head.map((c, j) => td('th', c, j)).join('')}</tr></thead>`}<tbody>${
+  return `<div class="nt-table ${cls}${bare ? ' bare' : ''}"><table>${bare ? '' : `<thead><tr>${head.map((c, j) => td('th', c, j)).join('')}</tr></thead>`}<tbody>${
     rows.slice(2).map(r => `<tr>${cells(r).map((c, j) => td('td', c, j)).join('')}</tr>`).join('')}</tbody></table></div>`;
 }
 

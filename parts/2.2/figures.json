@@ -1,0 +1,6 @@
+[
+ {"id": "parabola", "page": 64, "rect": [384, 105, 494, 208], "label": "Points of B = A squared on a parabola, symmetric about A = 0"},
+ {"id": "paths", "page": 65, "rect": [148, 252, 448, 375], "label": "From A to B: Euclidean straight line and a Manhattan staircase along the axes; every staircase has the same Manhattan length"},
+ {"id": "angle", "page": 66, "rect": [355, 402, 490, 481], "label": "Vectors A and B with the angle theta between them; cos theta only cares about the angle"},
+ {"id": "venn", "page": 67, "rect": [374, 190, 484, 268], "label": "Venn diagram: A has 1 2 3, both have 4 5, B has 6 7"}
+]

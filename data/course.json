@@ -278,8 +278,8 @@
       }
      ],
      "end": 68,
-     "ready": false,
-     "visuals": 0
+     "ready": true,
+     "visuals": 5
     },
     {
      "id": "2.3",
