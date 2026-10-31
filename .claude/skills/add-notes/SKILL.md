@@ -28,9 +28,12 @@ exactly what changed, and change only that.
 ## 2. Transcribe verbatim → `parts/<id>/notes.md`
 - Start at the part's "The flow" box; the chapter banner and part title come from course.json.
 - Every sentence, equation (symbol for symbol in KaTeX), list, table, box and worked example, in order. Same bold/italic.
-- Box mapping (the PDF's legend): red → `:::def Title`; blue → `:::ml Title`; amber "Added note"/"Added intuition"/
-  "Added clarification" → `:::add <its own title>`; grey example boxes with a header bar → `:::ex <header>`; the
-  bordered "The flow" box → `:::plain`; centred "Big picture" → `:::big Big picture`. Titles verbatim.
+- Box mapping (the PDF's legend): red → `:::def Title`; blue → `:::ml Title` (a blue box with no title → `:::ml`);
+  amber "Added note"/"Added intuition"/"Added clarification" → `:::add <its own title>`; grey example boxes with a
+  header bar → `:::ex <header>`; teal-headed "Mental model"/"Mental map" → `:::model <title>`; the bordered
+  "The flow" box → `:::plain`; centred "Big picture" → `:::big Big picture`. Titles verbatim.
+- Small centred figure captions ("Lecture Figure 3.1 concept: …", "Simulation: …") → `:::cap`. Aligned lists with no
+  header (e.g. "ρ = 1 | perfect positive…") → a pipe table whose header row is empty (`| | |`), rendered without rules.
 - Boxed equations `\boxed{}`, underbraces `\underbrace{}`, matrices `bmatrix`, `\tfrac` where the PDF uses small fractions.
 - Two-column layouts → `:::cols` (`figleft` when the figure is on the left, `even` for two text columns).
 - Quick-reference tables: one table even when the PDF splits it over pages; first line `|{stack}`.
@@ -58,7 +61,11 @@ the plan file. Bar: 3Blue1Brown / Seeing Theory / setosa quality, like the Surve
 
 ## 5. Check script → `scripts/check/<id with _>.py`
 Recompute every number in the part's worked examples and every number a visual opens on (see `1_1.py`), with
-`check(name, got, want, tol)` and `done()`. It must pass: `python -I scripts/check/<id>.py`.
+`check(name, got, want, tol)` and `done()`. Visuals built on seeded data use `src/viz/stats.js` `rng(seed)`; rebuild the
+same data in Python with `common_rng.py` and check what the visual shows. If a notes number disagrees with the math,
+keep the notes verbatim, make the check assert the true value, print a `NOTES DISCREPANCY` line, and add a row to
+`research/notes-findings.md` for Faris. Then `python -I scripts/check/run_all.py` must pass.
+Never pass a label into a kernel or distance (the notes' "lift by label" warning): kernels see inputs only.
 
 ## 6. Audit (localhost, `python scripts/serve.py`, http://localhost:8590/part.html?p=<id>)
 In the page:
@@ -71,7 +78,8 @@ await __guide.mountAll(); await new Promise(r=>setTimeout(r,1500));
 → `[]`, the number of `:::viz`, `0`, the part's section count, `0`. Then at 375 px (`resize_window` 375×812, reload):
 `innerWidth` must be 375 and `scrollWidth - innerWidth` 0 (a grid item that sizes to content, or KaTeX's absolute
 MathML layer, can silently widen a phone layout). Call each visual's `state()` and compare with the check script's
-numbers. Finally compare the rendered part with the PDF pages section by section: nothing missing, nothing added.
+numbers. To audit every part at once (desktop and 375 px), load each `part.html?p=<id>` in a hidden iframe of that width,
+call `__guide.mountAll()`, and read the same fields plus `document.documentElement.scrollWidth - innerWidth`. Finally compare the rendered part with the PDF pages section by section: nothing missing, nothing added.
 
 ## 7. Finish
 `python scripts/build_course.py` (marks the part ready, counts visuals), commit, and report to Faris: what was added,
