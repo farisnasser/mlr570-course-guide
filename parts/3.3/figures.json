@@ -1,0 +1,12 @@
+[
+ {"id": "lift", "page": 103, "rect": [96, 62, 499, 255], "label": "Original space: an inner class inside a ring, no line works, the true boundary is a circle; lifted space: the ring rises, the centre stays low, a flat plane separates them"},
+ {"id": "feature-count", "page": 106, "rect": [165, 452, 427, 589], "label": "Number of polynomial features on a log scale: 231 for n=20, d=2; 5,151 for n=100, d=2; 176,851 for n=100, d=3"},
+ {"id": "rbf-profiles", "page": 108, "rect": [148, 452, 444, 586], "label": "K(x,x') against distance for gamma = 0.3 (broad), gamma = 1, gamma = 5 (very local)"},
+ {"id": "global-local", "page": 109, "rect": [96, 632, 499, 756], "label": "Polynomial feature x^2 alive everywhere; RBF bumps around each x_i fading away from each point"},
+ {"id": "rbf-laplacian", "page": 111, "rect": [139, 190, 454, 288], "label": "RBF e^(-gamma r^2) with a smooth rounded top, Laplacian e^(-gamma r) with a sharp tip and heavier tails"},
+ {"id": "krr-fit", "page": 113, "rect": [113, 629, 483, 766], "label": "Data on a wave: a flat OLS line versus the RBF kernel regression curve following the points"},
+ {"id": "knn-star", "page": 114, "rect": [148, 489, 441, 579], "label": "Query x_q with its k = 5 nearest neighbours inside a dashed circle: 3 red, 2 blue, so predict red"},
+ {"id": "knn-k", "page": 116, "rect": [145, 390, 441, 517], "label": "k = 1 follows every point (a staircase); k moderate follows the trend"},
+ {"id": "elbow", "page": 117, "rect": [139, 121, 460, 268], "label": "Validation MSE against k: high variance at small k, high bias at large k, minimum-error region near k = 10 to 11"},
+ {"id": "curse-sim", "page": 118, "rect": [99, 128, 496, 275], "label": "Distance divided by average against dimension (log): farthest falls from about 2 and nearest rises from 0 toward 1"}
+]

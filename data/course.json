@@ -566,8 +566,8 @@
       }
      ],
      "end": 119,
-     "ready": false,
-     "visuals": 0
+     "ready": true,
+     "visuals": 8
     }
    ]
   }
