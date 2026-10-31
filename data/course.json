@@ -476,8 +476,8 @@
       }
      ],
      "end": 101,
-     "ready": false,
-     "visuals": 0
+     "ready": true,
+     "visuals": 3
     },
     {
      "id": "3.3",

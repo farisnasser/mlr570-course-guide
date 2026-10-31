@@ -1,0 +1,6 @@
+[
+ {"id": "projection", "page": 94, "rect": [194, 128, 401, 271], "label": "The plane Col(X) spanned by 1 and x; y above it, its projection y-hat = P_X y in the plane, and the residual e = y - y-hat perpendicular to the plane"},
+ {"id": "homo-hetero", "page": 95, "rect": [135, 606, 447, 739], "label": "Homoscedastic: constant spread around the line; heteroscedastic: spread grows with x"},
+ {"id": "residual-plots", "page": 96, "rect": [139, 57, 450, 148], "label": "Residuals: a flat band versus a widening funnel"},
+ {"id": "coef-bars", "page": 99, "rect": [155, 581, 441, 736], "label": "OLS coefficients -1.225, 1.5, 2.5 (large, uneven) against ridge with lambda = 1, about 0.8 each (small, balanced)"}
+]
