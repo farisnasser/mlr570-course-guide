@@ -233,8 +233,8 @@
       }
      ],
      "end": 62,
-     "ready": false,
-     "visuals": 0
+     "ready": true,
+     "visuals": 7
     },
     {
      "id": "2.2",

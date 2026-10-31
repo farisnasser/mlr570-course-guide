@@ -1,0 +1,8 @@
+[
+ {"id": "pipeline", "page": 50, "rect": [116, 514, 480, 556], "label": "Raw Data to Preprocessing to Model-Ready Features to Training / Deployment"},
+ {"id": "rolling", "page": 51, "rect": [109, 651, 480, 764], "label": "A noisy raw series with a window of size w and the smoother rolling mean"},
+ {"id": "resampling", "page": 53, "rect": [106, 57, 486, 137], "label": "Original 40 vs 4, oversample minority, undersample majority"},
+ {"id": "binning", "page": 56, "rect": [109, 145, 483, 202], "label": "Equal-width bins with counts 9, 3, 1, 1 and equal-frequency bins with counts about 4, 4, 3, 3"},
+ {"id": "pca-cloud", "page": 57, "rect": [165, 59, 427, 205], "label": "A data cloud in x1, x2 with PC1 (most variance) and the orthogonal PC2"},
+ {"id": "evr-bars", "page": 59, "rect": [378, 85, 486, 193], "label": "Bars of percent variance 70, 20, 10 for PC1, PC2, PC3 with the cumulative curve"}
+]
