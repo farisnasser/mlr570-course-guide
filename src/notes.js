@@ -13,6 +13,7 @@
 //   :::ex Title             grey example box with a header bar
 //   :::model Title          teal-headed box (the PDF's "Mental model" summaries)
 //   :::plain                bordered box (e.g. "The flow")
+//   :::cap                  a figure caption from the PDF (small, centred)
 //   :::big Title            red box, centred large text ("Big picture")
 //   :::cols [even|figleft]  side-by-side columns; :::col ... ::: inside (stack on phones)
 //   :::fig <id>             the PDF's own figure, parts/<id>/fig/<id>.svg (exact vector extract)
@@ -121,6 +122,7 @@ export function blocks(lines, ctx = {}) {
       const [kind, arg] = [m[1], m[2].trim()];
       if (kind === 'cols') out.push(`<div class="nt-cols ${esc(arg)}">${blocks(body, ctx)}</div>`);
       else if (kind === 'col') out.push(`<div class="nt-col">${blocks(body, ctx)}</div>`);
+      else if (kind === 'cap') out.push(`<div class="nt-cap">${blocks(body, ctx)}</div>`);
       else if (kind === 'fig') out.push(`<figure class="pdffig" data-fig="${esc(arg)}"></figure>`);
       else if (kind === 'viz') {
         const k = arg.search(/\s\|\s/), id = k < 0 ? arg : arg.slice(0, k).trim(), cap = k < 0 ? '' : arg.slice(k + 3).trim();

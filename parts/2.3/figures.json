@@ -1,0 +1,8 @@
+[
+ {"id": "split-bar", "page": 69, "rect": [122, 565, 473, 591], "label": "Bar split into Train 70% (700), Val 15%, Test 15%"},
+ {"id": "complexity", "page": 70, "rect": [142, 197, 460, 369], "label": "Loss against model complexity: training error keeps falling, validation error falls then rises; underfitting, optimum, overfitting"},
+ {"id": "three-fits", "page": 70, "rect": [129, 421, 467, 520], "label": "Underfit (a straight line), good fit (a gentle curve), overfit (a curve through every point)"},
+ {"id": "kfold", "page": 71, "rect": [126, 416, 470, 527], "label": "K = 5 folds: in run i, fold i is VAL and the rest are Train, giving Error i"},
+ {"id": "confusion", "page": 72, "rect": [171, 172, 424, 278], "label": "Confusion matrix: actual + row TP (correct positive), FN (missed positive); actual - row FP (false alarm), TN (correct negative)"},
+ {"id": "threshold", "page": 73, "rect": [129, 653, 463, 782], "label": "Score distributions of actual - and actual + with a threshold t; FN and FP regions; move t left for more recall, right for more precision"}
+]

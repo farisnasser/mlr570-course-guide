@@ -273,3 +273,6 @@
 /* header-less tables (aligned lists in the PDF): no rules, centred */
 .nt-table.bare table { width: auto; margin: 0 auto; border: 0; }
 .nt-table.bare td { border: 0; padding: 2px 12px; }
+
+.nt-cap { text-align: center; font-size: 13.5px; line-height: 1.45; color: var(--muted); max-width: 780px; margin-left: auto; margin-right: auto; }
+.nt-cap b { color: var(--prose); }
