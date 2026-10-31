@@ -1,0 +1,101 @@
+[
+ {
+  "id": "grid-before-after",
+  "page": 5,
+  "rect": [
+   145,
+   468,
+   455,
+   596
+  ],
+  "label": "Basis vectors e1, e2 before, and after applying A: the unit square becomes a parallelogram with area scaled by |det A|"
+ },
+ {
+  "id": "three-cases",
+  "page": 8,
+  "rect": [
+   138,
+   432,
+   455,
+   506
+  ],
+  "label": "Three line pictures: cross (one solution), parallel (no solution), same line (infinitely many)"
+ },
+ {
+  "id": "data-matrix",
+  "page": 8,
+  "rect": [
+   100,
+   616,
+   168,
+   692
+  ],
+  "label": "A 3 by 2 data matrix [1 2; 3 4; 5 6] with its columns labelled x-axis and y-axis"
+ },
+ {
+  "id": "houses-scatter",
+  "page": 9,
+  "rect": [
+   92,
+   346,
+   258,
+   440
+  ],
+  "label": "Scatter of houses: X (m squared) against Y (bedrooms)"
+ },
+ {
+  "id": "null-line",
+  "page": 10,
+  "rect": [
+   360,
+   462,
+   488,
+   560
+  ],
+  "label": "The null-space line of A along the direction (-2, 1)"
+ },
+ {
+  "id": "ramp",
+  "page": 13,
+  "rect": [
+   386,
+   610,
+   486,
+   680
+  ],
+  "label": "A block on a ramp with axes along and perpendicular to the ramp"
+ },
+ {
+  "id": "norm-shapes",
+  "page": 17,
+  "rect": [
+   134,
+   80,
+   461,
+   205
+  ],
+  "label": "Shapes of equal norm: L2 circle, L1 diamond, ellipse x1^2 + 4 x2^2 = 1"
+ },
+ {
+  "id": "contours",
+  "page": 17,
+  "rect": [
+   354,
+   550,
+   500,
+   684
+  ],
+  "label": "Contour circles L = 1, 4, 9 with the model starting on the outer circle and moving inward"
+ },
+ {
+  "id": "svd-strip",
+  "page": 18,
+  "rect": [
+   144,
+   220,
+   455,
+   289
+  ],
+  "label": "SVD read right to left: x, rotate (V transpose), stretch/shrink (Sigma), rotate again (U)"
+ }
+]

@@ -1,0 +1,41 @@
+/* Shared tokens. Dark theme on purpose: same family as the Survey Visual Atlas. */
+:root {
+  --bg: #0b0e1a;
+  --bg-2: #0f1324;
+  --panel: rgba(16, 21, 38, .86);
+  --panel-solid: #121830;
+  --line: #2a3352;
+  --line-soft: #1d2440;
+  --ink: #e8ecf8;
+  --prose: #d6dcef;
+  --muted: #8e99bd;
+  --faint: #5d6890;
+  /* visual colour language (shared with the Atlas) */
+  --c1: #5fe0b0;        /* first column / e1 / good */
+  --c2: #ff7a59;        /* second column / e2 */
+  --span: #7cc4ff;      /* span, column space, positive curvature */
+  --null: #ff5d73;      /* null space, collapse, negative curvature */
+  --eig: #ffc857;       /* eigen directions, flat curvature */
+  --free: #b28cff;      /* a free vector the reader drags */
+  /* the notes' box legend (cover page): red = key definitions/results, blue = why it matters in ML, amber = additions */
+  --red: #ff6b6b;
+  --red-bg: rgba(255, 107, 107, .075);
+  --blue: #6cb6ff;
+  --blue-bg: rgba(108, 182, 255, .075);
+  --amber: #f5b14c;
+  --amber-bg: rgba(245, 177, 76, .085);
+  --display: "Sora", "Avenir Next", system-ui, sans-serif;
+  --serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --fig-bg: var(--bg);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 64px; }
+body { background: var(--bg); color: var(--ink); font-family: var(--display); line-height: 1.5; min-height: 100vh; }
+a { color: inherit; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--eig); outline-offset: 2px; border-radius: 6px; }
+.mono { font-family: var(--mono); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

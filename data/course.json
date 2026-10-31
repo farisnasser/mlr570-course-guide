@@ -1,0 +1,575 @@
+{
+ "title": "MLR 570 Course Notes",
+ "pdfPages": 119,
+ "chapters": [
+  {
+   "n": 1,
+   "title": "Mathematical Background",
+   "page": 5,
+   "intro": "Everything the rest of the course assumes you already know, gathered in one place, with the reason each piece matters for machine learning attached to it.",
+   "parts": [
+    {
+     "id": "1.1",
+     "title": "Linear Algebra",
+     "page": 5,
+     "sections": [
+      {
+       "n": "1.1.1",
+       "title": "Matrices as Linear Transformations",
+       "page": 5
+      },
+      {
+       "n": "1.1.2",
+       "title": "Rank",
+       "page": 7
+      },
+      {
+       "n": "1.1.3",
+       "title": "Rank–Nullity and the Null Space",
+       "page": 9
+      },
+      {
+       "n": "1.1.4",
+       "title": "Common Types of Matrices",
+       "page": 11
+      },
+      {
+       "n": "1.1.5",
+       "title": "Eigenvectors and Eigenvalues",
+       "page": 12
+      },
+      {
+       "n": "1.1.6",
+       "title": "Diagonalization",
+       "page": 13
+      },
+      {
+       "n": "1.1.7",
+       "title": "Norms",
+       "page": 15
+      },
+      {
+       "n": "1.1.8",
+       "title": "Singular Value Decomposition (SVD)",
+       "page": 18
+      },
+      {
+       "n": "1.1.9",
+       "title": "Quick Reference",
+       "page": 19
+      }
+     ],
+     "end": 22,
+     "ready": true,
+     "visuals": 11
+    },
+    {
+     "id": "1.2",
+     "title": "Probability & Statistics",
+     "page": 23,
+     "sections": [
+      {
+       "n": "1.2.1",
+       "title": "A Single Random Variable",
+       "page": 23
+      },
+      {
+       "n": "1.2.2",
+       "title": "Moments",
+       "page": 25
+      },
+      {
+       "n": "1.2.3",
+       "title": "Two Random Variables: Joint Distributions",
+       "page": 28
+      },
+      {
+       "n": "1.2.4",
+       "title": "Conditional Probability Distributions",
+       "page": 29
+      },
+      {
+       "n": "1.2.5",
+       "title": "Independence",
+       "page": 30
+      },
+      {
+       "n": "1.2.6",
+       "title": "Expectation with Two Random Variables",
+       "page": 31
+      },
+      {
+       "n": "1.2.7",
+       "title": "Covariance and Correlation",
+       "page": 33
+      },
+      {
+       "n": "1.2.8",
+       "title": "Conditional Expectation",
+       "page": 35
+      },
+      {
+       "n": "1.2.9",
+       "title": "Putting It All Together: Discrete vs Continuous",
+       "page": 36
+      },
+      {
+       "n": "1.2.10",
+       "title": "Quick Reference",
+       "page": 36
+      }
+     ],
+     "end": 37,
+     "ready": false,
+     "visuals": 0
+    },
+    {
+     "id": "1.3",
+     "title": "Calculus & Optimization",
+     "page": 38,
+     "sections": [
+      {
+       "n": "1.3.1",
+       "title": "Limits & Derivatives",
+       "page": 38
+      },
+      {
+       "n": "1.3.2",
+       "title": "Partial Derivatives & Gradients",
+       "page": 39
+      },
+      {
+       "n": "1.3.3",
+       "title": "Vector & Matrix Derivatives",
+       "page": 40
+      },
+      {
+       "n": "1.3.4",
+       "title": "The Chain Rule",
+       "page": 42
+      },
+      {
+       "n": "1.3.5",
+       "title": "Matrix Calculus Identities",
+       "page": 45
+      },
+      {
+       "n": "1.3.6",
+       "title": "Convexity & Optimization",
+       "page": 46
+      },
+      {
+       "n": "1.3.7",
+       "title": "Quick Reference",
+       "page": 48
+      }
+     ],
+     "end": 49,
+     "ready": false,
+     "visuals": 0
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Data Fundamentals",
+   "page": 50,
+   "intro": "Everything that happens before you fit a model and everything that happens after: preparing data, measuring similarity, and judging honestly whether the result works.",
+   "parts": [
+    {
+     "id": "2.1",
+     "title": "Data Preprocessing",
+     "page": 50,
+     "sections": [
+      {
+       "n": "2.1.1",
+       "title": "Why Preprocess at All?",
+       "page": 50
+      },
+      {
+       "n": "2.1.2",
+       "title": "Aggregation",
+       "page": 51
+      },
+      {
+       "n": "2.1.3",
+       "title": "Sampling",
+       "page": 52
+      },
+      {
+       "n": "2.1.4",
+       "title": "Normalization",
+       "page": 53
+      },
+      {
+       "n": "2.1.5",
+       "title": "Encoding",
+       "page": 54
+      },
+      {
+       "n": "2.1.6",
+       "title": "Discretization",
+       "page": 55
+      },
+      {
+       "n": "2.1.7",
+       "title": "Dimensionality Reduction",
+       "page": 56
+      },
+      {
+       "n": "2.1.8",
+       "title": "Principal Component Analysis (PCA)",
+       "page": 56
+      },
+      {
+       "n": "2.1.9",
+       "title": "Feature Selection",
+       "page": 60
+      },
+      {
+       "n": "2.1.10",
+       "title": "Quick Reference",
+       "page": 60
+      }
+     ],
+     "end": 62,
+     "ready": false,
+     "visuals": 0
+    },
+    {
+     "id": "2.2",
+     "title": "Similarity Measures",
+     "page": 63,
+     "sections": [
+      {
+       "n": "2.2.1",
+       "title": "Pearson Correlation",
+       "page": 63
+      },
+      {
+       "n": "2.2.2",
+       "title": "Euclidean and Manhattan Distance",
+       "page": 64
+      },
+      {
+       "n": "2.2.3",
+       "title": "The Curse of Dimensionality",
+       "page": 65
+      },
+      {
+       "n": "2.2.4",
+       "title": "Cosine Similarity",
+       "page": 66
+      },
+      {
+       "n": "2.2.5",
+       "title": "Jaccard Similarity",
+       "page": 67
+      },
+      {
+       "n": "2.2.6",
+       "title": "Comparative Summary",
+       "page": 67
+      },
+      {
+       "n": "2.2.7",
+       "title": "Quick Reference",
+       "page": 67
+      }
+     ],
+     "end": 68,
+     "ready": false,
+     "visuals": 0
+    },
+    {
+     "id": "2.3",
+     "title": "Model Evaluation",
+     "page": 69,
+     "sections": [
+      {
+       "n": "2.3.1",
+       "title": "Training, Validation, and Testing",
+       "page": 69
+      },
+      {
+       "n": "2.3.2",
+       "title": "Underfitting and Overfitting",
+       "page": 70
+      },
+      {
+       "n": "2.3.3",
+       "title": "K-Fold Cross-Validation",
+       "page": 71
+      },
+      {
+       "n": "2.3.4",
+       "title": "Classification Metrics",
+       "page": 72
+      },
+      {
+       "n": "2.3.5",
+       "title": "F1 and the Harmonic Mean",
+       "page": 73
+      },
+      {
+       "n": "2.3.6",
+       "title": "The Decision Threshold",
+       "page": 73
+      },
+      {
+       "n": "2.3.7",
+       "title": "Weighted F-beta",
+       "page": 74
+      },
+      {
+       "n": "2.3.8",
+       "title": "Regression Metrics: MSE and MAE",
+       "page": 74
+      },
+      {
+       "n": "2.3.9",
+       "title": "Quick Reference",
+       "page": 75
+      }
+     ],
+     "end": 76,
+     "ready": false,
+     "visuals": 0
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Supervised Learning",
+   "page": 77,
+   "intro": "The models themselves, taken apart one by one: what each one optimizes, where its formula comes from, and the geometry behind it.",
+   "parts": [
+    {
+     "id": "3.1",
+     "title": "Hard-Margin SVM",
+     "page": 77,
+     "sections": [
+      {
+       "n": "3.1.1",
+       "title": "Why SVM? From “a separator” to the best separator",
+       "page": 77
+      },
+      {
+       "n": "3.1.2",
+       "title": "Rebuilding the Line Geometry from First Principles",
+       "page": 77
+      },
+      {
+       "n": "3.1.3",
+       "title": "Distance from a Point to a Hyperplane",
+       "page": 79
+      },
+      {
+       "n": "3.1.4",
+       "title": "SVM Margin Geometry",
+       "page": 80
+      },
+      {
+       "n": "3.1.5",
+       "title": "Why We Need the Hard-Margin Constraint",
+       "page": 82
+      },
+      {
+       "n": "3.1.6",
+       "title": "Hard-Margin SVM Primal Problem",
+       "page": 83
+      },
+      {
+       "n": "3.1.7",
+       "title": "Lagrange Multipliers: Putting the Constraints into One Function",
+       "page": 83
+      },
+      {
+       "n": "3.1.8",
+       "title": "From the Lagrangian to the Dual Problem",
+       "page": 84
+      },
+      {
+       "n": "3.1.9",
+       "title": "Why Does the Dual Maximize?",
+       "page": 85
+      },
+      {
+       "n": "3.1.10",
+       "title": "Final Hard-Margin Dual Problem",
+       "page": 87
+      },
+      {
+       "n": "3.1.11",
+       "title": "Support Vectors and the Geometry of the Final Classifier",
+       "page": 87
+      },
+      {
+       "n": "3.1.12",
+       "title": "Lecture Worked Example",
+       "page": 88
+      },
+      {
+       "n": "3.1.13",
+       "title": "Quick Reference",
+       "page": 88
+      }
+     ],
+     "end": 90,
+     "ready": false,
+     "visuals": 0
+    },
+    {
+     "id": "3.2",
+     "title": "Linear Regression: OLS, WLS & Ridge",
+     "page": 91,
+     "sections": [
+      {
+       "n": "3.2.1",
+       "title": "Ordinary Least Squares (OLS): What Are We Solving?",
+       "page": 91
+      },
+      {
+       "n": "3.2.2",
+       "title": "Deriving the OLS Gradient from First Principles",
+       "page": 92
+      },
+      {
+       "n": "3.2.3",
+       "title": "The Geometry of OLS: the Normal Equations Come from the Picture",
+       "page": 93
+      },
+      {
+       "n": "3.2.4",
+       "title": "OLS Numerical Example from the Lecture",
+       "page": 95
+      },
+      {
+       "n": "3.2.5",
+       "title": "Homoscedasticity vs. Heteroscedasticity",
+       "page": 95
+      },
+      {
+       "n": "3.2.6",
+       "title": "Weighted Least Squares (WLS)",
+       "page": 96
+      },
+      {
+       "n": "3.2.7",
+       "title": "Ridge Regression: a Different Problem",
+       "page": 97
+      },
+      {
+       "n": "3.2.8",
+       "title": "Ridge Objective and Closed-Form Solution",
+       "page": 98
+      },
+      {
+       "n": "3.2.9",
+       "title": "Ridge Worked Example from the Lecture",
+       "page": 98
+      },
+      {
+       "n": "3.2.10",
+       "title": "Quick Reference",
+       "page": 99
+      }
+     ],
+     "end": 101,
+     "ready": false,
+     "visuals": 0
+    },
+    {
+     "id": "3.3",
+     "title": "Nonlinear Models, Kernels & k-NN",
+     "page": 102,
+     "sections": [
+      {
+       "n": "3.3.1",
+       "title": "Why Linear Models Need Help",
+       "page": 102
+      },
+      {
+       "n": "3.3.2",
+       "title": "Nonlinear Feature Mappings",
+       "page": 103
+      },
+      {
+       "n": "3.3.3",
+       "title": "Polynomial Features Before Polynomial Kernels",
+       "page": 104
+      },
+      {
+       "n": "3.3.4",
+       "title": "The Polynomial Kernel, Built from First Principles",
+       "page": 104
+      },
+      {
+       "n": "3.3.5",
+       "title": "Why Dot Products Let Us Kernelize the Perceptron",
+       "page": 106
+      },
+      {
+       "n": "3.3.6",
+       "title": "RBF / Gaussian Kernel",
+       "page": 108
+      },
+      {
+       "n": "3.3.7",
+       "title": "Local versus Global Geometry",
+       "page": 109
+      },
+      {
+       "n": "3.3.8",
+       "title": "Polynomial versus RBF: What Each Kernel Assumes",
+       "page": 110
+      },
+      {
+       "n": "3.3.9",
+       "title": "Exponential / Laplacian Kernel",
+       "page": 110
+      },
+      {
+       "n": "3.3.10",
+       "title": "What Makes a Kernel Valid?",
+       "page": 111
+      },
+      {
+       "n": "3.3.11",
+       "title": "Kernel Least Squares / Kernel Ridge Regression",
+       "page": 111
+      },
+      {
+       "n": "3.3.12",
+       "title": "k-Nearest Neighbors (k-NN)",
+       "page": 114
+      },
+      {
+       "n": "3.3.13",
+       "title": "The Meaning of Bias and Variance in k-NN",
+       "page": 116
+      },
+      {
+       "n": "3.3.14",
+       "title": "Choosing k: the Elbow / Minimum-Error Region",
+       "page": 116
+      },
+      {
+       "n": "3.3.15",
+       "title": "k-NN Computational Cost and the Curse of Dimensionality",
+       "page": 117
+      },
+      {
+       "n": "3.3.16",
+       "title": "Quick Reference",
+       "page": 118
+      }
+     ],
+     "end": 119,
+     "ready": false,
+     "visuals": 0
+    }
+   ]
+  }
+ ]
+}

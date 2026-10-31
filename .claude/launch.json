@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "course-guide",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["C:/Users/Asus/faris-brain/university/courses/fall-2026/MLR570/course-guide/scripts/serve.py", "8590"],
+      "port": 8590
+    }
+  ]
+}
