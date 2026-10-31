@@ -1,0 +1,7 @@
+[
+ {"id": "secant-tangent", "page": 39, "rect": [142, 60, 454, 218], "label": "The secant through x and x + h turns into the tangent with slope f'(x) as h shrinks to 0"},
+ {"id": "total-derivative-graph", "page": 43, "rect": [200, 463, 396, 530], "label": "Graph: x to y directly with dy/dx = 1, and x to u = x^2 (du/dx = 2x) to y = x + u (dy/du = 1)"},
+ {"id": "vector-chain-graph", "page": 44, "rect": [154, 158, 442, 232], "label": "x to u = g(x) to y = f(u), with Jacobians du/dx and dy/du; backprop multiplies local Jacobians going backward"},
+ {"id": "gd-eta", "page": 46, "rect": [148, 474, 450, 574], "label": "Gradient descent on a parabola: eta good gives steady progress, eta too large overshoots"},
+ {"id": "convex-nonconvex", "page": 47, "rect": [129, 635, 463, 762], "label": "Convex bowl with the chord above the graph; non-convex curve with a global and a local minimum"}
+]
