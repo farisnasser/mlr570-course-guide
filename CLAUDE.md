@@ -60,5 +60,5 @@ Use the **add-notes** skill (`.claude/skills/add-notes/SKILL.md`).
 `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
 
 ## Publishing
-Local only until Faris approves. Before creating a GitHub repo or enabling Pages, ask him whether it should be public
-(it contains his course notes and the PDF).
+Public (Faris approved): repo `farisnasser/mlr570-course-guide`, GitHub Pages from `main`, root (`.nojekyll` present).
+Live at **https://farisnasser.github.io/mlr570-course-guide/**. Commit to `main` and push; confirm the live page loads.
